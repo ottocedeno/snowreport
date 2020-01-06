@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Otto Cedeno'"]
   spec.email         = ["'otto@ottostacos.com'"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Provides a CLI application for users to see the the top ski mountains in the world.}
+  spec.description   = %q{Snow Report allows users to see a list of the top mountains sorted by total snowfall.  Users can select a specific mountain to see additioanal details like trail and lift info.}
+  spec.homepage      = "https://github.com/ottocedeno/snowreport"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -38,4 +38,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "pry"
 end

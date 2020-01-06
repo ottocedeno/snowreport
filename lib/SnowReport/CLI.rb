@@ -3,6 +3,7 @@ class SnowReport::CLI
   def start
     # Will eventually hold the entire program loop
     welcome
+    instructions
   end
 
   def welcome
@@ -11,16 +12,20 @@ class SnowReport::CLI
     puts "* * * *   * * * *"
     puts "      *   *   *"
     puts "* * * *   *     *"
+    puts ""
     puts "WELCOME TO SNOW REPORT! (version #{SnowReport::VERSION})"
     puts "  A place to find the top ski resorts for all you ski and snowboard fans."
     puts "  Mountains are listed in order of most snow this current season."
     puts "  Ride Responsibly!"
-    puts "* * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *"
-    puts " * *     * *     * *     * *     * *     * *     * *     * *     * *     * *"
+    puts ""
+    puts "* * *    * *    * * *    * *    * * *    * *    * * *    * *    * * *    * * "
+    puts " * *    * * *    * *    * * *    * *    * * *    * *    * * *    * *    * * *"
+    puts ""
   end
 
-  def instruction
-
+  def instructions
+    puts "Snow Report accepts the following commands:"
+    puts "  EXIT:\tWill exit the application"
   end
 
 end
