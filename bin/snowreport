@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
+require_relative "../lib/SnowReport.rb"
 
-puts "Welcome to Snow Report!".upcase
+SnowReport::CLI.new.start

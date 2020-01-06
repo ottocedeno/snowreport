@@ -14,6 +14,17 @@ IDEA
         * Trails open
         * Lifts opens
 
+COPY
+
+* * * *   * * * *
+*         *     *
+* * * *   * * * *
+      *   *   *
+* * * *   *     *
+WELCOME TO SNOW REPORT! (version ###)
+  A place to find the top ski resorts for all you ski and snowboard fans.
+  Mountains are listed in order of most snow this current season.
+  Ride Responsibly!
 
 CLI
 * .start => contains the primary loop

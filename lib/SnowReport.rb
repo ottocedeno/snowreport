@@ -1,4 +1,5 @@
-require "SnowReport/version"
+require_relative "SnowReport/version"
+require_relative "SnowReport/CLI"
 
 module SnowReport
   class Error < StandardError; end
