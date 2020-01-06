@@ -1,0 +1,3 @@
+class SnowReport::CLI
+  
+end
