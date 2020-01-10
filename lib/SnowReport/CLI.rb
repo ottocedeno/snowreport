@@ -25,7 +25,9 @@ class SnowReport::CLI
 
   def instructions
     puts "Snow Report accepts the following commands:"
-    puts "  EXIT:\tWill exit the application"
+    puts "  TOP MOUNTAINS:  Shows a list of the top X mountains by snowfall... \n    To select a specific mountain from the list, type it's NAME"
+    puts "  HELP:  Will repeat this message at anytime"
+    puts "  EXIT:  Will exit the application"
   end
 
 end
