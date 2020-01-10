@@ -4,6 +4,7 @@ class SnowReport::CLI
     # Will eventually hold the entire program loop
     welcome
     instructions
+    decision_loop
   end
 
   def welcome
@@ -32,6 +33,15 @@ class SnowReport::CLI
     puts "  HELP:  Will repeat this message at anytime"
     puts "  EXIT:  Will exit the application"
     puts ""
+  end
+
+  def prompt
+    print "What could you like to do?  "
+    gets.strip.downcase
+  end
+  
+  def decision_loop
+
   end
 
 end
