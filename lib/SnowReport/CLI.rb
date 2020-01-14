@@ -3,7 +3,6 @@ require 'colorize'
 class SnowReport::CLI
 
   def start
-    # Will eventually hold the entire program loop
     welcome
     instructions
     decision_loop
@@ -38,11 +37,34 @@ class SnowReport::CLI
   end
 
   def prompt
-    print "What could you like to do?  "
+    print "What would you like to do?  "
     gets.strip.downcase
   end
 
   def decision_loop
+    user_input = nil
+
+    while user_input != "exit"
+      user_input = prompt
+
+      case user_input
+      when "top mountains"
+        puts "Here are the top ten mountains"
+        puts "1. Whistler"
+        puts "2. Snowmass"
+        puts "3. Mammouth"
+        puts ""
+      when "help"
+        instructions
+      when "exit"
+        puts "Pack up the board and let's call it a day...Until next time!"
+        exit(0)
+      else
+        puts "Wipe Out! That command was not found.".colorize(:red)
+        puts "Try HELP if you're stuck.".colorize(:red)
+        puts ""
+      end
+    end
 
   end
 
