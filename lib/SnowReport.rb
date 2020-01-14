@@ -1,4 +1,5 @@
 require_relative "SnowReport/version"
+require_relative "SnowReport/mountain"
 require_relative "SnowReport/CLI"
 
 module SnowReport
