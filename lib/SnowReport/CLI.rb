@@ -41,6 +41,12 @@ class SnowReport::CLI
     gets.strip.downcase
   end
 
+  def input_error
+    puts "Wipe Out! That command was not found.".colorize(:red)
+    puts "Try HELP if you're stuck.".colorize(:red)
+    puts ""
+  end
+
   def decision_loop
     user_input = nil
 
@@ -49,6 +55,7 @@ class SnowReport::CLI
 
       case user_input
       when "top mountains"
+        #update this with a Mountain class method
         puts "Here are the top ten mountains".upcase.colorize(:blue)
         puts '1. Whistler - 103"'
         puts '2. Snowmass - 97"'
@@ -60,12 +67,9 @@ class SnowReport::CLI
         puts "Pack up the board and let's call it a day...Until next time!"
         exit(0)
       else
-        puts "Wipe Out! That command was not found.".colorize(:red)
-        puts "Try HELP if you're stuck.".colorize(:red)
-        puts ""
+        input_error
       end
     end
-
   end
 
 end
