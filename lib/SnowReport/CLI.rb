@@ -42,6 +42,7 @@ class SnowReport::CLI
   end
 
   def input_error
+    puts ""
     puts "Wipe Out! That command was not found.".colorize(:red)
     puts "Try HELP if you're stuck.".colorize(:red)
     puts ""
@@ -59,7 +60,8 @@ class SnowReport::CLI
         when "help"
           instructions
         when "exit"
-          puts "Pack up the board and let's call it a day...Until next time!"
+          puts ""
+          puts "Pack up the board and let's call it a day...Until next time!".colorize(:blue)
           SnowReport::Mountain.reset
           exit(0)
         else

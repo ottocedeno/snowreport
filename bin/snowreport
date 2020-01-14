@@ -4,7 +4,8 @@ require 'pry'
 
 test_array = [
   {name: "Whistler", snow_depth: 104, url: "www.example.com/whistler"},
-  {name: "Mammouth", snow_depth: 99, url: "www.example.com/mammouth"}
+  {name: "Mammouth", snow_depth: 99, url: "www.example.com/mammouth"},
+  {name: "Mountain Creek", snow_depth: 50, url: "www.example.com/mountaincreek"}
 ]
 
 SnowReport::Mountain.new_from_page_index(test_array)
