@@ -49,10 +49,10 @@ class SnowReport::CLI
 
       case user_input
       when "top mountains"
-        puts "Here are the top ten mountains"
-        puts "1. Whistler"
-        puts "2. Snowmass"
-        puts "3. Mammouth"
+        puts "Here are the top ten mountains".upcase.colorize(:blue)
+        puts '1. Whistler - 103"'
+        puts '2. Snowmass - 97"'
+        puts '3. Mammouth - 85"'
         puts ""
       when "help"
         instructions
