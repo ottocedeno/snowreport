@@ -29,7 +29,7 @@ class SnowReport::CLI
     puts ""
     puts "INSTRUCTIONS".colorize(:blue)
     puts "Snow Report accepts the following commands:"
-    puts "  TOP MOUNTAINS:  Shows a list of the top X mountains by snowfall..."
+    puts "  TOP MOUNTAINS:  Shows a list of the top mountains by snowfall..."
     puts "    To select a specific mountain from the list, type it's NAME"
     puts "  HELP:  Will repeat this message at anytime"
     puts "  EXIT:  Will exit the application"
@@ -56,11 +56,7 @@ class SnowReport::CLI
       case user_input
       when "top mountains"
         #update this with a Mountain class method
-        puts "Here are the top ten mountains".upcase.colorize(:blue)
-        puts '1. Whistler - 103"'
-        puts '2. Snowmass - 97"'
-        puts '3. Mammouth - 85"'
-        puts ""
+        SnowReport::Mountain.print_top_mountains
       when "help"
         instructions
       when "exit"

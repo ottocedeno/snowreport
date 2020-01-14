@@ -30,12 +30,18 @@ class SnowReport::Mountain
     end
   end
 
+  def self.print_top_mountains
+    puts ""
+    puts "Here are the top #{self.all.size} mountains".upcase.colorize(:blue)
+    self.all.each.with_index(1) do |mountain, index|
+      puts "#{index}. #{mountain.name} - #{mountain.snow_depth} inches"
+    end
+    puts ""
+  end
+
 end
 
-
-#for testing...
-
 test_array = [
-  {name: "Mammouth", snow_depth: 104, url: "www.example.com/mammouth"},
-  {name: "Whistler", snow_depth: 99, url: "www.example.com/whistler"}
+  {name: "Whistler", snow_depth: 104, url: "www.example.com/whistler"},
+  {name: "Mammouth", snow_depth: 99, url: "www.example.com/mammouth"}
 ]

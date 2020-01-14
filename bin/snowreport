@@ -2,4 +2,10 @@
 require_relative "../lib/SnowReport.rb"
 require 'pry'
 
+test_array = [
+  {name: "Whistler", snow_depth: 104, url: "www.example.com/whistler"},
+  {name: "Mammouth", snow_depth: 99, url: "www.example.com/mammouth"}
+]
+
+SnowReport::Mountain.new_from_page_index(test_array)
 SnowReport::CLI.new.start
