@@ -21,13 +21,21 @@ class SnowReport::Mountain
     self.all.clear
   end
 
-  def self.new_from_page_index(mountain_array)
-    mountain_array.each do |mountain_hash|
+  def self.new_from_page_index(mountains)
+    mountains.each do |mountain_hash|
       new_mountain = SnowReport::Mountain.new
       new_mountain.name = mountain_hash[:name]
       new_mountain.snow_depth = mountain_hash[:snow_depth]
       new_mountain.url = mountain_hash[:url]
     end
+  end
+
+  def add_mountain_data
+    #Eventually:  test_data = SnowReport::Scraper.scrape_mountain(self.url)
+    test_data = {region: "Canada", current_temp: 34, last_snowfall: 0, trails_open: 65, lifts_open: 12}
+    self.region = test_data[:region]
+    self.current_temp = test_data[:current_temp]
+    self
   end
 
   def self.print_top_mountains
