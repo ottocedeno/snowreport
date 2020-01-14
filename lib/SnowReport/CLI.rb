@@ -54,16 +54,16 @@ class SnowReport::CLI
       user_input = prompt
 
       case user_input
-      when "top mountains"
-        #update this with a Mountain class method
-        SnowReport::Mountain.print_top_mountains
-      when "help"
-        instructions
-      when "exit"
-        puts "Pack up the board and let's call it a day...Until next time!"
-        exit(0)
-      else
-        input_error
+        when "top mountains"
+          SnowReport::Mountain.print_top_mountains
+        when "help"
+          instructions
+        when "exit"
+          puts "Pack up the board and let's call it a day...Until next time!"
+          SnowReport::Mountain.reset
+          exit(0)
+        else
+          input_error
       end
     end
   end
