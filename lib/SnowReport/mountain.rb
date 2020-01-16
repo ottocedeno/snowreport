@@ -59,7 +59,12 @@ class SnowReport::Mountain
   def print_mountain_info
     puts ""
     puts "#{self.name}".upcase.colorize(:blue)
-    puts "Current snow depth:" + " #{self.snow_depth}".colorize(:red)
+    puts "Located in #{self.region}" if self.region
+    puts "Current Temperature: " + "#{self.current_temp} degrees".colorize(:red) if self.current_temp
+    puts "Current Snow Depth: " + "#{self.snow_depth} inches".colorize(:red) if self.snow_depth
+    puts "Last Snow Fall: " + "#{self.last_snowfall} inches".colorize(:red) if self.last_snowfall
+    puts "Trails Open: " + "#{self.trails_open}".colorize(:red) if self.trails_open
+    puts "Lifts Open: " + "#{self.lifts_open}".colorize(:red) if self.lifts_open
     puts ""
   end
 
