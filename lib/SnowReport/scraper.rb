@@ -25,7 +25,11 @@ class SnowReport::Scraper
     mountain_page = Nokogiri::HTML(open("https://opensnow.com/location/sugarbowl")) #sub in mountail_url
     region = mountain_page.css("div.single-page-header div.location-info h2.subtitle").text
     current_temp = mountain_page.css("div#report-data div.data-container")[1].css("div.data-cell").first.text.strip
-
+    tomorrow = mountain_page.css("div#forecast-block div.data-container").first.css("div.highsnow").first.text.gsub("\"","")
+    trails = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[1].text.strip
+    lifts = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[2].text.strip
+    base = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[3].text.strip
+    conditions = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[4].text.strip
     binding.pry
   end
 end

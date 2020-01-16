@@ -10,7 +10,7 @@ require 'pry'
 
 SnowReport::Mountain.new_from_mountains_array(SnowReport::Scraper.download_opensnow_index)
 
-# SnowReport::Scraper.individual_mountain_data
+SnowReport::Scraper.individual_mountain_data
 
 
-SnowReport::CLI.new.start
+# SnowReport::CLI.new.start
