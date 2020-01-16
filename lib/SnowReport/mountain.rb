@@ -21,6 +21,10 @@ class SnowReport::Mountain
     self.all.clear
   end
 
+  def self.names_list
+    self.all.map {|mountain| mountain.name.downcase}
+  end
+
   def self.new_from_page_index(mountains)
     mountains.each do |mountain_hash|
       new_mountain = SnowReport::Mountain.new
