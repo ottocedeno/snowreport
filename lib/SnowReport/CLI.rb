@@ -15,7 +15,7 @@ class SnowReport::CLI
     puts "      *   *   *".colorize(:light_white)
     puts "* * * *   *     *".colorize(:light_white)
     puts ""
-    puts "WELCOME TO SNOW REPORT! (version #{SnowReport::VERSION})".colorize(:blue)
+    puts "WELCOME TO SNOW REPORT! (version #{SnowReport::VERSION})".colorize(:blue).bold
     puts "  A place to find the top ski resorts for all you ski and snowboard fans."
     puts "  Mountains are listed in order of most snow this current season."
     puts "  Ride Responsibly!"
@@ -27,12 +27,12 @@ class SnowReport::CLI
 
   def instructions
     puts ""
-    puts "INSTRUCTIONS".colorize(:blue)
+    puts "INSTRUCTIONS".colorize(:blue).bold
     puts "Snow Report accepts the following commands:"
-    puts "  TOP MOUNTAINS:  Shows a list of the top mountains by snowfall..."
-    puts "    To select a specific mountain from the list, type it's NAME"
-    puts "  HELP:  Will repeat this message at anytime"
-    puts "  EXIT:  Will exit the application"
+    puts "  TOP MOUNTAINS:  ".colorize(:red) + "Shows a list of the top mountains by snowfall..."
+    puts "    To select a specific mountain from the list, type it's " + "NAME".colorize(:red)
+    puts "  HELP:  ".colorize(:red) + "Will repeat this message at anytime"
+    puts "  EXIT:  ".colorize(:red) + "Will exit the application"
     puts ""
   end
 
@@ -43,7 +43,7 @@ class SnowReport::CLI
 
   def input_error
     puts ""
-    puts "Wipe Out! That command was not found.".colorize(:red)
+    puts "Wipe Out! That command was not found.".upcase.colorize(:red).bold
     puts "Try HELP if you're stuck.".colorize(:red)
     puts ""
   end
@@ -58,16 +58,15 @@ class SnowReport::CLI
         SnowReport::Mountain.print_top_mountains
 
       elsif SnowReport::Mountain.list_of_names.include?(user_input)
-        # find the mountain object
         SnowReport::Mountain.find_by_name(user_input).print_mountain_info
-        # scrape it's URL, add that info to self
-        # print the mountian info
+
       elsif user_input == "help"
         instructions
 
       elsif user_input == "exit"
         puts ""
-        puts "Pack up the board and let's call it a day...Until next time!".upcase.colorize(:blue)
+        puts "Pack up the board and let's call it a day...Until next time!".upcase.colorize(:blue).bold
+        puts ""
         SnowReport::Mountain.reset
 
       else

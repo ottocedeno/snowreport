@@ -49,7 +49,7 @@ class SnowReport::Mountain
 
   def self.print_top_mountains
     puts ""
-    puts "Here are the top #{self.all.size} mountains".upcase.colorize(:blue)
+    puts "Here are the top #{self.all.size} mountains".upcase.colorize(:blue).bold
     self.all.each.with_index(1) do |mountain, index|
       puts "#{index}. #{mountain.name} - #{mountain.snow_depth} inches"
     end
@@ -58,7 +58,7 @@ class SnowReport::Mountain
 
   def print_mountain_info
     puts ""
-    puts "#{self.name}".upcase.colorize(:blue)
+    puts "#{self.name}".upcase.colorize(:blue).bold
     puts "Located in #{self.region}" if self.region
     puts "Current Temperature: " + "#{self.current_temp} degrees".colorize(:red) if self.current_temp
     puts "Current Snow Depth: " + "#{self.snow_depth} inches".colorize(:red) if self.snow_depth
