@@ -59,7 +59,7 @@ class SnowReport::CLI
 
       if user_input == "top mountains"
         SnowReport::Mountain.print_top_mountains
-      elsif SnowReport::Mountain.names_list.include?(user_input) #update this with the real list....
+      elsif SnowReport::Mountain.list_of_names.include?(user_input) #update this with the real list....
         puts "this works for now..."
       elsif user_input == "help"
         instructions

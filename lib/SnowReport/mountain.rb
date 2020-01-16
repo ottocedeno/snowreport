@@ -21,7 +21,7 @@ class SnowReport::Mountain
     self.all.clear
   end
 
-  def self.names_list
+  def self.list_of_names
     self.all.map {|mountain| mountain.name.downcase}
   end
 
