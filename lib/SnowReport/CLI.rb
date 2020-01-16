@@ -54,19 +54,22 @@ class SnowReport::CLI
     while user_input != "exit"
       user_input = prompt
 
-      # #test list for now...
-      # fake_list = ["whistler", "mammouth"]
-
       if user_input == "top mountains"
         SnowReport::Mountain.print_top_mountains
-      elsif SnowReport::Mountain.list_of_names.include?(user_input) #update this with the real list....
+
+      elsif SnowReport::Mountain.list_of_names.include?(user_input)
         puts "this works for now..."
+        # find the mountain object
+        # scrape it's URL, add that info to self
+        # print the mountian info
       elsif user_input == "help"
         instructions
+
       elsif user_input == "exit"
         puts ""
         puts "Pack up the board and let's call it a day...Until next time!".colorize(:blue)
         SnowReport::Mountain.reset
+
       else
         input_error
       end

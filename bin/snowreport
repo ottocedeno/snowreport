@@ -9,5 +9,6 @@ test_array = [
 ]
 
 SnowReport::Mountain.new_from_page_index(test_array)
+test = SnowReport::Mountain.all.first
 binding.pry
 SnowReport::CLI.new.start

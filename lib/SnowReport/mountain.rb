@@ -21,6 +21,10 @@ class SnowReport::Mountain
     self.all.clear
   end
 
+  def self.find_by_name(mountain_name)
+    self.all.find {|mountain| mountain.name.downcase == mountain_name}
+  end
+
   def self.list_of_names
     self.all.map {|mountain| mountain.name.downcase}
   end
