@@ -39,12 +39,17 @@ class SnowReport::Mountain
   end
 
   def add_mountain_data
-    mountain_data = SnowReport::Scraper.scrape_mountain(self.url)
-    test_data = {region: "Canada", current_temp: 34, tomorrows_snowfall: 0, trails_open: 65, lifts_open: 12}
-    test_data.each do |key, value|
+    mountain_data = SnowReport::Scraper.individual_mountain_data(self.url)
+    mountain_data.each do |key, value|
       self.send("#{key}=", value)
     end
     self
+  end
+
+  def self.update_all_mountains
+    all.each do |mountain|
+      mountain.add_mountain_data
+    end
   end
 
   def self.print_top_mountains
@@ -59,10 +64,12 @@ class SnowReport::Mountain
   def print_mountain_info
     puts ""
     puts "#{self.name}".upcase.colorize(:blue).bold
-    puts "Located in #{self.region}" if self.region
-    puts "Current Temperature: " + "#{self.current_temp} degrees".colorize(:red) if self.current_temp
-    puts "5 Day Snowfall: " + "#{self.five_day_snowfall} inches".colorize(:red) if self.five_day_snowfall
-    puts "Tomorrow's Snow Fall: " + "#{self.tomorrows_snowfall} inches".colorize(:red) if self.tomorrows_snowfall
+    puts "Located in #{self.region}".upcase if self.region
+    puts "Current Temperature: " + "#{self.current_temp}".colorize(:red) if self.current_temp
+    puts "5 Day Snowfall: " + "#{self.five_day_snowfall}".colorize(:red) if self.five_day_snowfall
+    puts "Tomorrow's Snow Fall: " + "#{self.tomorrows_snowfall}".colorize(:red) if self.tomorrows_snowfall
+    puts "Conditions: " + "#{self.conditions}".colorize(:red) if self.conditions
+    puts "Base Depth: " + "#{self.base_depth}".colorize(:red) if self.base_depth
     puts "Trails Open: " + "#{self.trails_open}".colorize(:red) if self.trails_open
     puts "Lifts Open: " + "#{self.lifts_open}".colorize(:red) if self.lifts_open
     puts ""
