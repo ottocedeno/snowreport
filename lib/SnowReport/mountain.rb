@@ -1,7 +1,7 @@
 require 'colorize'
 
 class SnowReport::Mountain
-  attr_accessor :name, :snow_depth, :url, :region, :current_temp, :last_snowfall, :trails_open, :lifts_open
+  attr_accessor :name, :five_day_snowfall, :url, :region, :current_temp, :last_snowfall, :trails_open, :lifts_open
 
   @@all = []
 
@@ -49,9 +49,9 @@ class SnowReport::Mountain
 
   def self.print_top_mountains
     puts ""
-    puts "Here are the top #{self.all.size} mountains".upcase.colorize(:blue).bold
+    puts "Here are the top #{self.all.size} mountains by 5 day snowfall".upcase.colorize(:blue).bold
     self.all.each.with_index(1) do |mountain, index|
-      puts "#{index}. #{mountain.name} - #{mountain.snow_depth} inches"
+      puts "#{index}. #{mountain.name} - #{mountain.five_day_snowfall} inches"
     end
     puts ""
   end
@@ -61,7 +61,7 @@ class SnowReport::Mountain
     puts "#{self.name}".upcase.colorize(:blue).bold
     puts "Located in #{self.region}" if self.region
     puts "Current Temperature: " + "#{self.current_temp} degrees".colorize(:red) if self.current_temp
-    puts "Current Snow Depth: " + "#{self.snow_depth} inches".colorize(:red) if self.snow_depth
+    puts "5 Day Snowfall: " + "#{self.five_day_snowfall} inches".colorize(:red) if self.five_day_snowfall
     puts "Last Snow Fall: " + "#{self.last_snowfall} inches".colorize(:red) if self.last_snowfall
     puts "Trails Open: " + "#{self.trails_open}".colorize(:red) if self.trails_open
     puts "Lifts Open: " + "#{self.lifts_open}".colorize(:red) if self.lifts_open

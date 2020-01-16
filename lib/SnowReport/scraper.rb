@@ -3,19 +3,18 @@ require "nokogiri"
 
 class SnowReport::Scraper
 
-  def self.open_url(url)
-    Nokogiri::HTML(open(url))
-  end
-
-  def self.opensnow_index
-    index_page = self.open_url("https://opensnow.com/")
-    top_resorts = index_page.css("div.forecast-box div.recommended-resorts div.resort")
-
-    top_resorts.each do |resort|
-      {
-        name: resort.css("div.name").text,
-        }
+  def self.download_opensnow_index
+    index_page = Nokogiri::HTML(open("https://opensnow.com/"))
+    top_mountains = index_page.css("div.forecast-box div.recommended-resorts div.resort")
+    mountains_array = []
+    top_mountains.each do |mountain|
+      mountain_info = {}
+      mountain_info[:name] = mountain.css("div.name").text
+      mountain_info[:five_day_snowfall] = mountain.css("div.snowfall").text.gsub("\"","")
+      #load hash
+      mountains_array << mountain_info
     end
-    binding.pry
+    mountains_array
   end
+
 end
