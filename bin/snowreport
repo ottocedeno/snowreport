@@ -9,6 +9,8 @@ test_array = [
 ]
 
 SnowReport::Mountain.new_from_page_index(test_array)
-test = SnowReport::Mountain.all.first.add_mountain_data
-# binding.pry
+SnowReport::Mountain.all.first.add_mountain_data
+
+SnowReport::Scraper.opensnow_index
+
 SnowReport::CLI.new.start
