@@ -54,19 +54,35 @@ class SnowReport::CLI
     while user_input != "exit"
       user_input = prompt
 
-      case user_input
-        when "top mountains"
-          SnowReport::Mountain.print_top_mountains
-        when "help"
-          instructions
-        when "exit"
-          puts ""
-          puts "Pack up the board and let's call it a day...Until next time!".colorize(:blue)
-          SnowReport::Mountain.reset
-          exit(0)
-        else
-          input_error
+      fake_list = ["whistler", "mammouth"]
+
+      if user_input == "top mountains"
+        SnowReport::Mountain.print_top_mountains
+      elsif fake_list.include?(user_input)
+        puts "this works for now..."
+      elsif user_input == "help"
+        instructions
+      elsif user_input == "exit"
+        puts ""
+        puts "Pack up the board and let's call it a day...Until next time!".colorize(:blue)
+        SnowReport::Mountain.reset
+      else
+        input_error
       end
+
+      # case user_input
+      #   when "top mountains"
+      #     SnowReport::Mountain.print_top_mountains
+      #   when "help"
+      #     instructions
+      #   when "exit"
+      #     puts ""
+      #     puts "Pack up the board and let's call it a day...Until next time!".colorize(:blue)
+      #     SnowReport::Mountain.reset
+      #     exit(0)
+      #   else
+      #     input_error
+      # end
     end
   end
 

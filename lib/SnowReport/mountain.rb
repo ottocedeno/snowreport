@@ -36,8 +36,6 @@ class SnowReport::Mountain
     test_data.each do |key, value|
       self.send("#{key}=", value)
     end
-    # self.region = test_data[:region]
-    # self.current_temp = test_data[:current_temp]
     self
   end
 
