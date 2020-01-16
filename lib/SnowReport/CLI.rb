@@ -58,8 +58,8 @@ class SnowReport::CLI
         SnowReport::Mountain.print_top_mountains
 
       elsif SnowReport::Mountain.list_of_names.include?(user_input)
-        puts "this works for now..."
         # find the mountain object
+        SnowReport::Mountain.find_by_name(user_input).print_mountain_info
         # scrape it's URL, add that info to self
         # print the mountian info
       elsif user_input == "help"
@@ -67,7 +67,7 @@ class SnowReport::CLI
 
       elsif user_input == "exit"
         puts ""
-        puts "Pack up the board and let's call it a day...Until next time!".colorize(:blue)
+        puts "Pack up the board and let's call it a day...Until next time!".upcase.colorize(:blue)
         SnowReport::Mountain.reset
 
       else

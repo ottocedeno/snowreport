@@ -56,6 +56,13 @@ class SnowReport::Mountain
     puts ""
   end
 
+  def print_mountain_info
+    puts ""
+    puts "#{self.name}".upcase.colorize(:blue)
+    puts "Current snow depth:" + " #{self.snow_depth}".colorize(:red)
+    puts ""
+  end
+
 end
 
 test_array = [
