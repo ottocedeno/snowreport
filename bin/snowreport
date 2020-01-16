@@ -8,7 +8,7 @@ require 'pry'
 #   {name: "Mountain Creek", five_day_snowfall: 50, url: "www.example.com/mountaincreek"}
 # ]
 
-SnowReport::Mountain.new_from_page_index(SnowReport::Scraper.opensnow_index)
+SnowReport::Mountain.new_from_mountains_array(SnowReport::Scraper.download_opensnow_index)
 # SnowReport::Mountain.all.first.add_mountain_data
 
 SnowReport::CLI.new.start

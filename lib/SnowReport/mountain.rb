@@ -29,7 +29,7 @@ class SnowReport::Mountain
     self.all.map {|mountain| mountain.name.downcase}
   end
 
-  def self.new_from_page_index(mountains)
+  def self.new_from_mountains_array(mountains)
     mountains.each do |mountain_hash|
       new_mountain = SnowReport::Mountain.new
       mountain_hash.each do |key, value|

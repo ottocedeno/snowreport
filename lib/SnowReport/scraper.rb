@@ -11,6 +11,7 @@ class SnowReport::Scraper
       mountain_info = {}
       mountain_info[:name] = mountain.css("div.name").text
       mountain_info[:five_day_snowfall] = mountain.css("div.snowfall").text.gsub("\"","")
+      mountain_info[:url] = "https://opensnow.com" +  mountain.css("div.name a").attribute("href").value
       #load hash
       mountains_array << mountain_info
     end
