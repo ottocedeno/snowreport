@@ -65,7 +65,8 @@ class SnowReport::CLI
 
       elsif user_input == "exit"
         puts ""
-        puts "Pack up the board and let's call it a day...Until next time!".upcase.colorize(:blue).bold
+        puts "Pack up the board call it a day...".upcase.colorize(:blue).bold
+        puts "Until next time!"
         puts ""
         SnowReport::Mountain.reset
 
