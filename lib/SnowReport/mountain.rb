@@ -1,7 +1,7 @@
 require 'colorize'
 
 class SnowReport::Mountain
-  attr_accessor :name, :five_day_snowfall, :url, :region, :current_temp, :tomorrows_snowfall, :trails_open, :lifts_open
+  attr_accessor :name, :five_day_snowfall, :url, :region, :current_temp, :tomorrows_snowfall, :trails_open, :lifts_open, :base_depth, :conditions
 
   @@all = []
 
@@ -39,7 +39,7 @@ class SnowReport::Mountain
   end
 
   def add_mountain_data
-    #Eventually:  test_data = SnowReport::Scraper.scrape_mountain(self.url)
+    mountain_data = SnowReport::Scraper.scrape_mountain(self.url)
     test_data = {region: "Canada", current_temp: 34, tomorrows_snowfall: 0, trails_open: 65, lifts_open: 12}
     test_data.each do |key, value|
       self.send("#{key}=", value)

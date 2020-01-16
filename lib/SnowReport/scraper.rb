@@ -30,6 +30,14 @@ class SnowReport::Scraper
     lifts = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[2].text.strip
     base = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[3].text.strip
     conditions = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[4].text.strip
-    binding.pry
+    mountain_hash = {
+      region: region,
+      current_temp:  current_temp,
+      tomorrows_snowfall: tomorrow,
+      trails_open: trails,
+      lifts_open: lifts,
+      base_depth: base,
+      conditions: conditions
+    }
   end
 end
