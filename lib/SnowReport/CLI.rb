@@ -9,6 +9,7 @@ class SnowReport::CLI
   end
 
   def welcome
+    puts ""
     puts "* * * *   * * * *".colorize(:light_white)
     puts "*         *     *".colorize(:light_white)
     puts "* * * *   * * * *".colorize(:light_white)
