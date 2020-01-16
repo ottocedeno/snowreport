@@ -33,8 +33,11 @@ class SnowReport::Mountain
   def add_mountain_data
     #Eventually:  test_data = SnowReport::Scraper.scrape_mountain(self.url)
     test_data = {region: "Canada", current_temp: 34, last_snowfall: 0, trails_open: 65, lifts_open: 12}
-    self.region = test_data[:region]
-    self.current_temp = test_data[:current_temp]
+    test_data.each do |key, value|
+      self.send("#{key}=", value)
+    end
+    # self.region = test_data[:region]
+    # self.current_temp = test_data[:current_temp]
     self
   end
 
