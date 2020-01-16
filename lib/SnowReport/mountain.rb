@@ -24,9 +24,9 @@ class SnowReport::Mountain
   def self.new_from_page_index(mountains)
     mountains.each do |mountain_hash|
       new_mountain = SnowReport::Mountain.new
-      new_mountain.name = mountain_hash[:name]
-      new_mountain.snow_depth = mountain_hash[:snow_depth]
-      new_mountain.url = mountain_hash[:url]
+      mountain_hash.each do |key, value|
+        new_mountain.send("#{key}=", value)
+      end
     end
   end
 
