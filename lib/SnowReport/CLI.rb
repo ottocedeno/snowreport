@@ -59,7 +59,9 @@ class SnowReport::CLI
         SnowReport::Mountain.print_top_mountains
 
       elsif SnowReport::Mountain.list_of_names.include?(user_input)
-        SnowReport::Mountain.find_by_name(user_input).print_mountain_info
+        mountain = SnowReport::Mountain.find_by_name(user_input)
+        mountain.add_mountain_data  if mountain.has_extra_data == false
+        mountain.print_mountain_info
 
       elsif user_input == "help"
         instructions

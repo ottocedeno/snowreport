@@ -26,6 +26,7 @@ class SnowReport::Scraper
     region = mountain_page.css("div.single-page-header div.location-info h2.subtitle").text
     current_temp = mountain_page.css("div#report-data div.data-container")[1].css("div.data-cell").first.text.strip
     tomorrow = mountain_page.css("div#forecast-block div.data-container").first.css("div.highsnow").first.text
+
     trails = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[1].text.strip
     lifts = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[2].text.strip
     base = mountain_page.css("div#report-data div.data-container")[3].css("div.data-cell")[3].text.strip
