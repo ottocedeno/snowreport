@@ -49,7 +49,6 @@ class SnowReport::Scraper
     mountain_hash = {
       region: region,
       tomorrows_snowfall: tomorrow,
-      # current_temp:  current_temp,
       trails_open: trails,
       lifts_open: lifts,
       base_depth: base,

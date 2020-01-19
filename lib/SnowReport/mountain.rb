@@ -1,7 +1,7 @@
 require 'colorize'
 
 class SnowReport::Mountain
-  attr_accessor :name, :five_day_snowfall, :url, :region, :current_temp, :tomorrows_snowfall, :trails_open, :lifts_open, :base_depth, :conditions, :has_extra_data
+  attr_accessor :name, :five_day_snowfall, :url, :region, :tomorrows_snowfall, :trails_open, :lifts_open, :base_depth, :conditions, :has_extra_data
   @@all = []
 
   def initialize
@@ -66,7 +66,6 @@ class SnowReport::Mountain
     puts ""
     puts "#{self.name}".upcase.colorize(:blue).bold
     puts "Located in #{self.region}".upcase if self.region
-    puts "Current Temperature: " + "#{self.current_temp}".colorize(:red) if self.current_temp
     puts "5 Day Snowfall: " + "#{self.five_day_snowfall}".colorize(:red) if self.five_day_snowfall
     puts "Tomorrow's Snow Fall: " + "#{self.tomorrows_snowfall}".colorize(:red) if self.tomorrows_snowfall
     puts "Conditions: " + "#{self.conditions}".colorize(:red) if self.conditions
