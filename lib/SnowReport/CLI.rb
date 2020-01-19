@@ -42,6 +42,9 @@ class SnowReport::CLI
     SnowReport::Mountain.reset if SnowReport::Mountain.all.size > 0
     SnowReport::Mountain.new_from_mountains_array(SnowReport::Scraper.download_opensnow_index)
     SnowReport::Mountain.update_all_mountains
+
+    puts "Success!".upcase.colorize(:blue).bold
+    puts ""
   end
 
   def prompt
