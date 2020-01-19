@@ -21,8 +21,6 @@ class SnowReport::CLI
     puts "  A place to find the top ski resorts for all you winter sport fans."
     puts "  Mountains are listed in order of most snow this current season."
     puts "  Ride Responsibly!"
-    puts ""
-
   end
 
   def instructions
@@ -38,8 +36,10 @@ class SnowReport::CLI
   end
 
   def load_mountain_data
-    puts "Mountain Data Loading...".upcase.colorize(:red)
-
+    puts ""
+    puts "Loading Mountain Data...".upcase.colorize(:red).bold
+    puts ""
+    SnowReport::Mountain.reset if SnowReport::Mountain.all.size > 0
     SnowReport::Mountain.new_from_mountains_array(SnowReport::Scraper.download_opensnow_index)
     SnowReport::Mountain.update_all_mountains
   end
