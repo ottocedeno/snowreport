@@ -1,7 +1,7 @@
 require 'colorize'
 
 class SnowReport::Mountain
-  attr_accessor :name, :five_day_snowfall, :url, :region, :tomorrows_snowfall, :trails_open, :lifts_open, :base_depth, :conditions, :has_extra_data
+  attr_accessor :name, :five_day_snowfall, :url, :region, :tomorrows_snowfall, :trails_open, :lifts_open, :base_depth, :conditions
   @@all = []
 
   def initialize
@@ -39,7 +39,6 @@ class SnowReport::Mountain
   end
 
   def add_mountain_data
-    has_extra_data = true
     mountain_data = SnowReport::Scraper.individual_mountain_data(self.url)
     mountain_data.each do |key, value|
       self.send("#{key}=", value)
