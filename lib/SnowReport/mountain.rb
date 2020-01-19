@@ -76,8 +76,3 @@ class SnowReport::Mountain
   end
 
 end
-
-test_array = [
-  {name: "Whistler", snow_depth: 104, url: "www.example.com/whistler"},
-  {name: "Mammouth", snow_depth: 99, url: "www.example.com/mammouth"}
-]

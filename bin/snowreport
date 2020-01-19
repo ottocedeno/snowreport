@@ -2,12 +2,4 @@
 require_relative "../lib/SnowReport.rb"
 require 'pry'
 
-# test_array = [
-#   {name: "Whistler", five_day_snowfall: 104, url: "www.example.com/whistler"},
-#   {name: "Mammouth", five_day_snowfall: 99, url: "www.example.com/mammouth"},
-#   {name: "Mountain Creek", five_day_snowfall: 50, url: "www.example.com/mountaincreek"}
-# ]
-
-SnowReport::Mountain.new_from_mountains_array(SnowReport::Scraper.download_opensnow_index)
-# SnowReport::Mountain.update_all_mountains
 SnowReport::CLI.new.start
