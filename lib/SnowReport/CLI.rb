@@ -30,7 +30,7 @@ class SnowReport::CLI
     puts ""
     puts "INSTRUCTIONS".colorize(:blue).bold
     puts "Snow Report accepts the following commands:"
-    puts "  TOP MOUNTAINS:  ".colorize(:red) + "Shows a list of the top mountains by snowfall..."
+    puts "  TOP TEN:  ".colorize(:red) + "Shows a list of the top mountains by snowfall..."
     puts "    To select a specific mountain from the list, type it's " + "NAME".colorize(:red)
     puts "  HELP:  ".colorize(:red) + "Will repeat this message at anytime"
     puts "  EXIT:  ".colorize(:red) + "Will exit the application"
@@ -55,7 +55,7 @@ class SnowReport::CLI
     while user_input != "exit"
       user_input = prompt
 
-      if user_input == "top mountains"
+      if user_input == "top ten"
         SnowReport::Mountain.print_top_mountains
 
       elsif SnowReport::Mountain.list_of_names.include?(user_input)
