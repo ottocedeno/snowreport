@@ -4,7 +4,7 @@ Welcome to SnowReport! A terminal based application that reports expected snowfa
 
 ## Installation
 
-The current verion of SnowReport is in beta but can be cloned down to your local environment.
+The current verion of SnowReport is in beta and can be cloned down to your local environment.
 
 In terminal, type:
 
@@ -18,17 +18,17 @@ Run `bin/snowreport` to start a session of SnowReport.
 
 While the application is running, you can type the following commands:
 
-  `TOP TEN` To produce a list of the top mountains.
-  `HELP` To reprint the instructions.
-  `EXIT` To exit the application.
+- `TOP TEN` To produce a list of the top mountains.
+- `HELP` To reprint the instructions.
+- `EXIT` To exit the application.
 
   The fun is in selecting individual mountains from the `TOP TEN` list.  You can select each mountain to see more information about that particular mountain by simply typing it's full name.
 
-  For example:  If 'Whistler Blackcomb' is listed, you can select it by typing `whistler blackcomb`
+  For example:  If 'Whistler Blackcomb' is listed, you can select it by typing `whistler blackcomb`.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 ## Contributing
 
