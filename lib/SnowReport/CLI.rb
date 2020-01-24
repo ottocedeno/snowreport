@@ -23,8 +23,7 @@ class SnowReport::CLI
     puts "A place to find the top ski resorts for all you winter sport fans."
     puts "Snow Report shows you which mountains are expected to get DUMPED on over the next few days."
     puts "You can even select mountains from the list to find out more info!"
-    puts "Ride Responsibly!".upcase
-    puts ""
+    puts "Ride Responsibly!\n\n".upcase
   end
 
   #Responsible for calling appropriate Mountain object methods that loads mountain data into the application:
@@ -34,11 +33,11 @@ class SnowReport::CLI
     #This step is important if the user REFRESHES:
     SnowReport::Mountain.reset if SnowReport::Mountain.all.size > 0
 
+    #Main step that loads in all mountain data from Scraper class methods:
     SnowReport::Mountain.new_from_mountains_array(SnowReport::Scraper.download_opensnow_index)
     SnowReport::Mountain.update_all_mountains
 
-    puts "Success!".upcase.colorize(:blue).bold
-    puts ""
+    puts "Success!\n".upcase.colorize(:blue).bold
   end
 
   #Responsible for educating the user on available commands:
@@ -49,8 +48,7 @@ class SnowReport::CLI
     puts "  Type a mountain's " + "NAME:  ".colorize(:red) + "Will show you more details on that specific mountain."
     puts "  REFRESH:  ".colorize(:red) + "Will update mountain data"
     puts "  HELP:  ".colorize(:red) + "Will repeat this message at anytime"
-    puts "  EXIT:  ".colorize(:red) + "Will exit the application"
-    puts ""
+    puts "  EXIT:  ".colorize(:red) + "Will exit the application\n\n"
   end
 
   # Responsible for prompting user for input and returning it's value:
@@ -62,8 +60,7 @@ class SnowReport::CLI
   #Responsible for letting the user know of an invalid command:
   def input_error
     puts "Wipe Out! That command was not found.".upcase.colorize(:red).bold
-    puts "Try HELP if you're stuck.".colorize(:red)
-    puts ""
+    puts "Try HELP if you're stuck.\n".colorize(:red)
   end
 
   #Responsible for the main interactive application loop and returning the appropriate data depending on user input:
