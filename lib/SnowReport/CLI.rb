@@ -75,17 +75,17 @@ class SnowReport::CLI
 
       elsif SnowReport::Mountain.list_of_names.include?(user_input)
         SnowReport::Mountain.find_by_name(user_input).print_mountain_info
+
       elsif user_input == "refresh"
         load_mountain_data
+
       elsif user_input == "help"
         instructions
 
       elsif user_input == "exit"
-        puts ""
-        puts "Pack up the board call it a day...".upcase.colorize(:blue).bold
-        puts "Until next time!"
-        puts ""
         SnowReport::Mountain.reset
+        puts "\nPack it up, and call it a day...".upcase.colorize(:blue).bold
+        puts "Until next time, hang lose!\n"
 
       else
         input_error
