@@ -1,24 +1,14 @@
 # SnowReport
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/SnowReport`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to SnowReport! A terminal based application that reports expected snowfall at the world's best ski and snowboard resorts.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+The current verion of SnowReport is in beta but can be cloned down to your local environment.
 
-```ruby
-gem 'SnowReport'
-```
+In terminal, type:
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install SnowReport
+    $ git clone git@github.com:ottocedeno/snowreport.git
 
 ## Usage
 
