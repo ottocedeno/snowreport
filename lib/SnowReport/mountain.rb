@@ -37,7 +37,8 @@ class SnowReport::Mountain
     puts "Conditions: " + "#{self.conditions}".colorize(:red) if self.conditions
     puts "Base Depth: " + "#{self.base_depth}".colorize(:red) if self.base_depth
     puts "Trails Open: " + "#{self.trails_open}".colorize(:red) if self.trails_open
-    puts "Lifts Open: " + "#{self.lifts_open}\n".colorize(:red) if self.lifts_open
+    puts "Lifts Open: " + "#{self.lifts_open}".colorize(:red) if self.lifts_open
+    puts ""
   end
 
   #CLASS METHODS:
