@@ -18,17 +18,18 @@ class SnowReport::CLI
     puts "* * * *   *     *".colorize(:light_white)
     puts ""
     puts "WELCOME TO SNOW REPORT! (version #{SnowReport::VERSION})".colorize(:blue).bold
-    puts "  A place to find the top ski resorts for all you winter sport fans."
-    puts "  Mountains are listed in order of most snow this current season."
-    puts "  Ride Responsibly!"
+    puts "A place to find the top ski resorts for all you winter sport fans."
+    puts "Snow Report shows you which mountains are expected to get DUMPED on over the next few days."
+    puts "You can even select mountains from the list to find out more info!"
+    puts "Ride Responsibly!".upcase
   end
 
   def instructions
     puts ""
     puts "INSTRUCTIONS".colorize(:blue).bold
     puts "Snow Report accepts the following commands:"
-    puts "  TOP TEN:  ".colorize(:red) + "Shows a list of the top mountains by snowfall..."
-    puts "    To select a specific mountain from the list, type it's " + "NAME".colorize(:red)
+    puts "  TOP TEN:  ".colorize(:red) + "Will show you a list of which mountains are expecting the most snow in the coming days."
+    puts "  Type a mountain's " + "NAME:".colorize(:red) + "Will show you more details on that specific mountain."
     puts "  REFRESH:  ".colorize(:red) + "Will update mountain data"
     puts "  HELP:  ".colorize(:red) + "Will repeat this message at anytime"
     puts "  EXIT:  ".colorize(:red) + "Will exit the application"
