@@ -84,7 +84,7 @@ class SnowReport::Mountain
   def self.print_top_mountains
     puts "\nHere are the top #{self.all.size} mountains by 5 day snowfall".upcase.colorize(:blue).bold
     self.all.each.with_index(1) do |mountain, index|
-      puts "#{index}. #{mountain.name} - #{mountain.five_day_snowfall} inches"
+      puts "#{index}. #{mountain.name} - #{mountain.five_day_snowfall}"
     end
     puts ""
   end
