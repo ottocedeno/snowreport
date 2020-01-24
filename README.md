@@ -22,9 +22,9 @@ While the application is running, you can type the following commands:
 - `HELP` To reprint the instructions.
 - `EXIT` To exit the application.
 
-  The fun is in selecting individual mountains from the `TOP TEN` list.  You can select each mountain to see more information about that particular mountain by simply typing it's full name.
+The fun is in selecting individual mountains from the `TOP TEN` list.  You can select each mountain to see more information about that particular mountain by simply typing it's full name.
 
-  For example:  If 'Whistler Blackcomb' is listed, you can select it by typing `whistler blackcomb`.
+For example:  If 'Whistler Blackcomb' is listed, you can select it by typing `whistler blackcomb`.
 
 ## Development
 
